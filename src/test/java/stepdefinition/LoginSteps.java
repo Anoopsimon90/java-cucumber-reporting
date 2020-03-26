@@ -18,7 +18,7 @@ public class LoginSteps extends BaseStep{
         public void i_create_a_new_user_account_in_Google()
         {
             new ReportUtil(scenarioContext.getExtentTest())
-                    .log(LogStatus.PASS,"Login Step- Anoop Simon");
+                    .log(LogStatus.PASS,"Login Step- Anoop Simon098777");
 
     }
 }

@@ -6,6 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import stepdefinition.Hooks;
 
 import java.io.File;
 
@@ -14,20 +15,8 @@ import java.io.File;
         plugin = {"pretty"},
         tags = {"@diTest"},
         glue = {"stepdefinition"})
-        public class RunCucumberTest {
-        @BeforeClass
-        public static void initializer()
-        {
-                ExtentReports extentReports= new ExtentReports("C:/tmp/sample.html");
-                extentReports.loadConfig(new File(System.getProperty("user.dir")+"/extent-config.xml"));
-                ScenarioContext.registerExtentReportInContext(extentReports);
+        public class RunCucumberTest extends Hooks {
 
-        }
-        @AfterClass
-        public static void teardown()
-        {
-           ScenarioContext.getExtentReports().close();
-        }
 
 
 }
