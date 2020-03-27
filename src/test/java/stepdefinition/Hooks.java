@@ -22,7 +22,7 @@ public class Hooks {
         this.scenarioContext=scenarioContext;
     }
     @BeforeClass
-    public static void initializer()
+    public static void suiteinitializer()
     {
         ExtentReports extentReports= new ExtentReports("C:/tmp/sample.html");
         extentReports.loadConfig(new File(System.getProperty("user.dir")+"/extent-config.xml"));
@@ -30,7 +30,7 @@ public class Hooks {
 
     }
     @AfterClass
-    public static void teardown()
+    public static void suiteTeardown()
     {
         ScenarioContext.getExtentReports().close();
     }
@@ -47,6 +47,8 @@ public class Hooks {
     @After
     public void AfterScenario(Scenario scenario)
     {
+        System.out.println("-----After Scenario----");
+
         this.scenarioContext
                 .getExtentReports()
                 .endTest(this.scenarioContext.getExtentTest());
